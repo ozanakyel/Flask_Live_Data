@@ -1,0 +1,32 @@
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script>
+    $(function(){
+        console.log("ajaxxxxxxxxxxxxxxxx")
+        window.setInterval(function(){
+            load_new_assyNo()
+        }, 5000)
+    
+    function load_new_assyNo(){
+    $.ajax({
+    url:"/load_new_assyNo",
+    type:"POST",
+    dataType: "json",
+    success: function(data){
+        $("#assemblyNumber").replaceWith(data)}})
+    }
+})
+</script>
+<header>
+    <div class="navbar navbar-expand-sm bg-primary navbar-light">
+        <div class="container">
+            <a href="/" class="navbar-brand">QUARTER GLASS DETECTION</a>
+            <div class="container">
+                <div class="row row-cols-2">
+                  <div id="assemblyNumber" class="col alert alert-info" role="alert">Assy No: <strong>{{dest1.assyNo}}</strong></div>
+                  <div class="col alert alert-info ml-1" role="alert">Body No: <strong>{{dest1.bodyNo}}</strong></div>
+                  <div class="col alert alert-info ml-1" role="alert">Spec: <strong>{{dest1.spec}}</strong></div>
+                </div>
+              </div>
+        </div>
+    </div>
+</header>

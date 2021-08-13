@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <div class="jumbotron text-center">
+        <div id="Resimler" class="row row-cols-2">
+            <div id="ReferansResim" class="col text-danger" ><strong>REFERENCE IMAGE</strong>
+                <img src="/static/images/ref.jpg" style="width: 95%;" alt="resim vardi ama yok">
+            </div>
+            <div id="ActualResim" class="col text-danger"><strong>ACTUAL IMAGE</strong>
+                <img src="{{url_for('static', filename='images/act.jpg')}}" style="width: 95%;" alt="bakalim">
+            </div>
+        </div>
+    </div>
+{% endblock body %}    
